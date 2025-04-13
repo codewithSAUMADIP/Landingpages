@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link href='https://fonts.googleapis.com/css?family=League Spartan' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+			  font-family: 'League Spartan';
+              line-height: 1.2;
+        overflow-x: hidden;
+        height: 99.9vh;
+      }
+
+      /* Navbar styling */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ffffff1f;
+        backdrop-filter: blur(10px); /* Blur effect */
+        animation: onloadh1 3.5s ease-in-out forwards;
+      }
+
+
+      @keyframes onloadh1 {
+          0% {
+              top: -10%;  /* Starts higher up */
+              opacity: 0;
+          }
+          100% {
+              top: 0%;  /* Ends at correct position */
+              opacity: 1;
+          }
+      }
+
+      /* Logo on the left */
+      .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+      }
+
+      /* Links in the center */
+      .navbar .links {
+        display: flex;
+        gap: 30px;
+        margin-left: 400px;
+      }
+
+      .navbar .links a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bolder;
+      }
+
+      .navbar .links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Button on the right */
+      .navbar .button-container {
+        margin-left: auto;
+      }
+
+      .navbar .button {
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .navbar .button:hover {
+        background-color: #ffffff;
+        color: #000000;
+      }
+
+      /* Landing image container */
+      .image-container {
+        position: relative;
+        width: 100%;
+        height: 99.9vh; /* Full screen height */
+        overflow: hidden;
+        display: flex;
+        justify-content: center;  /* Center horizontally */
+        align-items: center;      /* Center vertically */
+
+      }
+
+      .landing-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        animation: zoomOut 3.5s ease-out forwards;
+      }
+
+      @keyframes zoomOut {
+        0% {
+          transform: scale(1.2);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Centered H1 over image */
+      .home {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%); /* Only affects X-axis */
+          color: rgb(0, 0, 0);
+          text-align: center;
+          animation: onloadh2 3.5s ease-in-out forwards;
+      }
+
+      @keyframes onloadh2 {
+          0% {
+              top: -10%;  /* Starts higher up */
+              opacity: 0;
+          }
+          100% {
+              top: 12%;  /* Ends at correct position */
+              opacity: 1;
+          }
+      }
+
+
+      .home-p1 {
+
+        color: rgb(0, 0, 0);
+        font-size: 190px;
+
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        text-align: center;
+      }
+      .home-p2 {
+
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+        margin-top: -50px;
+        font-weight: 800;
+        letter-spacing: 5px;
+        text-align: center;
+      }
+
+      .hometext {
+        position: absolute;
+        bottom: 4%;  /* Position it closer to the bottom (adjust as needed) */
+        left: 2%;     /* Position it closer to the left side (adjust as needed) */
+        color: rgb(255, 255, 255);
+        text-align: center;
+        animation: onloadh3 3.5s ease-in-out forwards;
+        background: transparent;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+    }
+    @keyframes onloadh3 {
+          0% {
+              bottom: -10%;  /* Starts higher up */
+              opacity: 0.5;
+          }
+          100% {
+              bottom: 4%;  /* Ends at correct position */
+              opacity: 1;
+          }
+      }
+      .hometext1 {
+        position: absolute;
+
+        left: 0%;     /* Position it closer to the left side (adjust as needed) */
+        color: rgb(255, 255, 255);
+        text-align: center;
+        border-radius: 10px;
+        width: 320px;
+        height: 170px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+
+
+      }
+      .hometext2 {
+        position: absolute;
+
+        right: 20%;     /* Position it closer to the left side (adjust as needed) */
+        color: rgb(255, 255, 255);
+        text-align: center;
+        bottom: 0%;
+        background-color: #ffffff34;
+        backdrop-filter: blur(1000px); /* Blur effect */
+        width: 140px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+      }
+      .hometext3 {
+        position: absolute;
+        bottom: 0%;
+        right: 8%;     /* Position it closer to the left side (adjust as needed) */
+        color: rgb(255, 255, 255);
+        text-align: center;
+        border-radius: 10px;
+        background-color: #ffffff34;
+        backdrop-filter: blur(1000px); /* Blur effect */
+        width: 160px;
+        height: 180px;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-top: 10px;
+
+      }
+      .cover {
+    width: 100%;
+    background-color: rgb(44, 30, 30);
+    z-index: 99999;
+    position: absolute;
+    
+    /* Centering content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh; /* Initial full screen height */
+    animation: onloadh4 1.5s ease-in-out forwards;
+}
+
+h1 {
+    color: white; /* Make text visible */
+    font-size: 9rem;
+    opacity: 1;
+    animation: fadeOutText 1s ease-in-out forwards 0.5s; /* Delays text fade out */
+}
+
+/* Cover Animation */
+@keyframes onloadh4 {
+    0% {
+        margin-top: -100vh;
+        height: 100vh;
+    }
+    100% {
+        margin-top: 0;
+        height: 0;
+    }
+}
+
+/* Text Opacity Animation */
+@keyframes fadeOutText {
+    0% {
+        font-size: 9rem;
+    }
+    100% {
+      font-size: 0.1rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Logo on the left -->
+        <div class="logo">ECLIPSE</div>
+        
+        <!-- Links centered -->
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        
+        <!-- Button on the right -->
+        <div class="button-container">
+            <button class="button">Sign Up 🢅</button>
+        </div>
+    </div>
+
+    <!-- Landing image -->
+    <div class="image-container">
+        <img src="C:\Users\91629\OneDrive\Desktop\product.png" alt="Landing Image" class="landing-image">
+        <div class="home">
+          <p class="home-p1">ECLIPSE</p>
+          <p class="home-p2">You will stay on top of the fashion trends</p>
+        </div>
+        <div class="hometext">
+          <div class="hometext1"><h1 style="font-size: 15px;margin-top:15px; text-align: left;padding: 10px;">Discover Radiance with the GlowEssence</h1><p style="font-size: 12px;padding: 10px;text-align: left;">Unveil your skin’s natural glow with GlowEssence Serum, a luxurious blend of nourishing ingredients designed to hydrate, brighten, and restore your skin’s youthful appearance. Packed with Vitamin C, Hyaluronic Acid, and Antioxidants, this serum penetrates deep into the skin, providing intense moisture and targeting dark spots, fine lines, and uneven skin tone.</p></div>
+          <div class="hometext2"><img style="width: 100%;height: auto;border-radius: 10px;" src="C:\Users\91629\OneDrive\Desktop\mini-product.jpg" alt=""></div>
+          <div class="hometext3"><i style="font-size: 24px;" class="fas fa-leaf"></i><p style="font-size: 14px;margin-top: 10px;">Whether you're looking for a smoother, more radiant complexion or simply want to refresh your skin, GlowEssence is the perfect addition to your skincare routine.</p></div>
+        </div>
+    </div>
+
+    <div class="cover"><h1>ECLIPSE</h1></div>
+
+    <script>
+      window.onload = function() {
+          const image = document.querySelector('.landing-image');
+          image.classList.add('zoom-out');
+      };
+    </script>
+</body>
+</html>
