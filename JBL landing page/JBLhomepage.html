@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JBL Landing Page</title>
+  <!-- Example Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" 
+    rel="stylesheet"
+  />
+  <style>
+    /* =========================
+       RESET & GLOBAL STYLES
+       ========================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+/* Body styling */
+body {
+  margin: 0;
+
+  font-family: sans-serif;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Blurred background image using ::before */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('C:/Users/91629/Downloads/ChatGPT Image Apr 13, 2025, 10_35_10 AM.png'); /* Change this to your image path */
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px);
+  z-index: -1; /* Sends it behind all content */
+  opacity: 0.9; /* Optional: fade effect */
+}
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       CONTAINER & GRID SETUP
+       ========================= */
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 80px 1fr 400px; /* Left nav | Main content | Right content */
+      grid-template-rows: 100%;
+      overflow: hidden;
+      margin-bottom: 10px;
+      padding: 6px;
+    }
+
+    /* =========================
+       LEFT SIDEBAR
+       ========================= */
+/* Sidebar */
+.sidebar {
+  width: 80px;
+  height: auto;
+  background-color: #111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-radius: 20px;
+  animation: animation1 2s ease forwards;
+  padding: 6px;
+
+}
+
+@keyframes animation1 {
+  0% {
+   
+    opacity: 0;
+  }
+  100% {
+   
+    opacity: 1;
+  }
+}
+
+
+/* Logo at the top */
+.sidebar .logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+/* Navigation icons section */
+.nav-icons {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+
+/* Each icon */
+.nav-icon {
+  width: 45px;
+  height: 45px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-icon:hover {
+  background-color: #FF6700;
+  color: #000;
+}
+
+
+
+    /* =========================
+       MAIN (MIDDLE CONTENT)
+       ========================= */
+    .main-content {
+      position: relative;
+      background:transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 20px;
+     
+    }
+
+
+    .hero {
+      text-align: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .hero .product-image {
+      width: 390px;
+      margin: 0 auto;
+      /* Example placeholder background or gradient 
+         In practice, replace with your actual product image URL */
+      background: url('image-removebg-preview.png') 
+                  no-repeat center/cover;
+      height: 540px;
+      border-radius: 10px;
+      z-index: 2;
+      margin-top: -20px;
+      animation: animation 2s ease forwards;
+}
+
+@keyframes animation {
+  0% {
+    transform: translate(0%, -50%);
+
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+
+    .product-rocks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('C:/Users/91629/Downloads/ChatGPT Image Apr 13, 2025, 10_35_10 AM.png') no-repeat center/cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  z-index: 0;
+  animation: zoomOut 2s ease forwards;
+
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+
+    /* =========================
+       RIGHT PANEL
+       ========================= */
+    .right-panel {
+      background-color: transparent;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+      border-radius: 20px;
+      animation: slideUp 2s ease-out forwards;
+
+    }
+    @keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+    .right-panel h2 {
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .right-panel .tagline {
+      color: #999999;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+    }
+
+    /* Example 'sound wave' or 'bars' visualization */
+    .sound-wave {
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.2) 100%
+      );
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    .sound-wave::before {
+      content: "";
+      position: absolute;
+      height: 80px;
+      width: 50%;
+      top: 0;
+      left: -50%;
+      background: repeating-linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+      animation: waveMove 3s linear infinite;
+    }
+    @keyframes waveMove {
+      0% {
+        left: -50%;
+      }
+      100% {
+        left: 100%;
+      }
+    }
+
+    /* Example of a “feature card” */
+    .feature-card {
+      background-color: #0E0E0E;
+      border-left: 3px solid #FF6700; /* Example JBL-like accent color */
+      padding: 40px 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+      border-radius: 20px;
+    }
+    .feature-card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      color: whitesmoke;
+    }
+    .feature-card p {
+      font-size: 14px;
+      color: #b5b5b5;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       RESPONSIVE EXTRAS
+       ========================= */
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: 60px 1fr 300px;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+      }
+      .main-content, .right-panel {
+        width: 100%;
+      }
+    }
+    .ok{
+      background-color: #0E0E0E;
+      border-radius: 20px;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">JBL</div>
+      <div class="nav-icons">
+        <!-- Home -->
+        <a href="#" class="nav-icon" title="Home">
+          <i class="fas fa-home"></i>
+        </a>
+        <!-- Cart -->
+        <a href="#" class="nav-icon" title="Cart">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <!-- Profile -->
+        <a href="#" class="nav-icon" title="Profile">
+          <i class="fas fa-user"></i>
+        </a>
+        <!-- Logout -->
+        <a href="#" class="nav-icon" title="Logout">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+        <!-- Settings (New Icon) -->
+        <a href="#" class="nav-icon" title="Settings">
+          <i class="fas fa-cog"></i>
+        </a>
+      </div>
+    </aside>
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="product-rocks"></div>
+      <div class="hero">
+        <div class="product-image"></div>
+      </div>
+    </main>
+    <!-- RIGHT PANEL -->
+    <section class="right-panel">
+      <!-- Immersive sound section -->
+      <div class="ok">
+        <h2 style="color: whitesmoke;">Immersive Sound, Deep Bass</h2>
+        <p class="tagline">
+          Experience clear audio, rich bass, and 360° 
+          surround sound for an immersive listening experience.
+        </p>
+        <div class="sound-wave"></div>
+      </div>
+      <!-- Feature card: JBL Charge 5 -->
+      <div class="feature-card">
+        <h3>JBL Charge 5</h3>
+        <p>
+          20+ hours of playtime, IP67 
+          waterproof & dustproof, built-in powerbank for charging.
+        </p>
+      </div>
+
+      <!-- Feature card: Easy Controls -->
+      <div class="feature-card">
+        <h3>Easy Controls</h3>
+        <p>
+          Change tracks, pause/play, and adjust 
+          volume with effortless controls on the speaker.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    /* 
+      Example JavaScript for future interactive elements, 
+      like a collapsible sidebar or other UI effects 
+    */
+  </script>
+</body>
+</html>
